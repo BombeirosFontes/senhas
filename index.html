@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Protegida por Senha</title>
+    <script>
+        function verificarSenha() {
+            var senha = document.getElementById("senha").value;
+            if (senha === "pass") { // Substitua 'pass' pela senha que deseja usar
+                window.location.href = "https://forms.gle/G47q6bZn51gicb5h9"; // Substitua pelo link do seu Google Form
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Digite a senha para acessar o formulário:</h2>
+    <input type="password" id="senha" />
+    <button onclick="verificarSenha()">Entrar</button>
+</body>
+</html>
