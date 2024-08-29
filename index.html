@@ -6,8 +6,26 @@
     <script>
         function verificarSenha() {
             var senha = document.getElementById("senha").value;
+            var parametros = new URLSearchParams(window.location.search);
+            var formulario = parametros.get('form');
+
+            // Verifica se a senha é correta
             if (senha === "pass") { // Substitua 'pass' pela senha que deseja usar
-                window.location.href = "https://forms.gle/G47q6bZn51gicb5h9"; // Substitua pelo link do seu Google Form
+                // Redireciona para o formulário correspondente
+                switch (formulario) {
+                    case 'ABSC02':
+                        window.location.href = "https://forms.gle/DAstFw9QhoqcRYVS7"; // Substitua pelo link do formulário 1
+                        break;
+                    case 'formulario2':
+                        window.location.href = "https://forms.gle/formulario2"; // Substitua pelo link do formulário 2
+                        break;
+                    case 'formulario3':
+                        window.location.href = "https://forms.gle/formulario3"; // Substitua pelo link do formulário 3
+                        break;
+                    // Adicione mais casos conforme necessário
+                    default:
+                        alert("Checklist não encontrada.");
+                }
             } else {
                 alert("Senha incorreta. Tente novamente.");
             }
@@ -15,7 +33,7 @@
     </script>
 </head>
 <body>
-    <h2>Digite a senha para acessar o formulário:</h2>
+    <h2>Digite a senha para acessar a checklist:</h2>
     <input type="password" id="senha" />
     <button onclick="verificarSenha()">Entrar</button>
 </body>
